@@ -124,10 +124,23 @@ ES UN NÚMERO PRIMO
 """
 
 def is_odd(number):
-    res = False
-    if 2 > number:
-        res = False
-    elif 0 == number%2:
-        res = False
+    isNotOdd = False
+    if 2 <= number:
+        for index in range(2,number):
+            if 0 == number % index:
+                isNotOdd = True
+                break
+    else:
+        isNotOdd = True
 
-    return res
+    return isNotOdd
+
+def printIsOdd():
+    count = 1
+    while 101 > count:
+        aux = is_odd(count)
+        if False == aux:
+            print("El número %d es primo" %count)
+        count += 1
+
+printIsOdd()
