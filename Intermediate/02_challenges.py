@@ -144,3 +144,32 @@ def printIsOdd():
         count += 1
 
 printIsOdd()
+
+"""
+INVIRTIENDO CADENAS
+
+ Crea un programa que invierta el orden de una cadena de texto
+ sin usar funciones propias del lenguaje que lo hagan de forma automática.
+ - Si le pasamos "Hola mundo" nos retornaría "odnum aloH"
+"""
+
+def swap_string(myStr):
+    myStr_len = len(myStr)
+    swapStr = ''
+    print(myStr_len)
+    negMyStr_len = -1
+    #print(swapStr)
+    for idx in range(0, myStr_len):
+        #print(myStr[negMyStr_len])
+        aux = myStr[negMyStr_len]
+        swapStr += aux
+        negMyStr_len -= 1
+    #print(swapStr)
+    #print(negMyStr_len)
+    return swapStr
+
+    
+strInit = "Hello"
+swStr = swap_string(strInit)
+print("Cadena original: %s" %strInit)
+print("Cadena al revés: %s" %swStr)
