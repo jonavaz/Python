@@ -152,7 +152,15 @@ INVIRTIENDO CADENAS
  sin usar funciones propias del lenguaje que lo hagan de forma automática.
  - Si le pasamos "Hola mundo" nos retornaría "odnum aloH"
 """
+# Implimentación de MoureDev
+def reverse(text):
+    text_len = len(text)
+    reversed_text = ""
+    for index in range(0, text_len):
+        reversed_text += text[text_len - index -1]
+    return reversed_text
 
+# Mi implementación
 def swap_string(myStr):
     myStr_len = len(myStr)
     swapStr = ''
@@ -171,5 +179,7 @@ def swap_string(myStr):
     
 strInit = "Hello"
 swStr = swap_string(strInit)
+swStr2 = reverse(strInit)
 print("Cadena original: %s" %strInit)
 print("Cadena al revés: %s" %swStr)
+print("Cadena al revés: %s" %swStr2)
