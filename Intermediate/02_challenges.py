@@ -124,10 +124,62 @@ ES UN NÚMERO PRIMO
 """
 
 def is_odd(number):
-    res = False
-    if 2 > number:
-        res = False
-    elif 0 == number%2:
-        res = False
+    isNotOdd = False
+    if 2 <= number:
+        for index in range(2,number):
+            if 0 == number % index:
+                isNotOdd = True
+                break
+    else:
+        isNotOdd = True
 
-    return res
+    return isNotOdd
+
+def printIsOdd():
+    count = 1
+    while 101 > count:
+        aux = is_odd(count)
+        if False == aux:
+            print("El número %d es primo" %count)
+        count += 1
+
+printIsOdd()
+
+"""
+INVIRTIENDO CADENAS
+
+ Crea un programa que invierta el orden de una cadena de texto
+ sin usar funciones propias del lenguaje que lo hagan de forma automática.
+ - Si le pasamos "Hola mundo" nos retornaría "odnum aloH"
+"""
+# Implimentación de MoureDev
+def reverse(text):
+    text_len = len(text)
+    reversed_text = ""
+    for index in range(0, text_len):
+        reversed_text += text[text_len - index -1]
+    return reversed_text
+
+# Mi implementación
+def swap_string(myStr):
+    myStr_len = len(myStr)
+    swapStr = ''
+    print(myStr_len)
+    negMyStr_len = -1
+    #print(swapStr)
+    for idx in range(0, myStr_len):
+        #print(myStr[negMyStr_len])
+        aux = myStr[negMyStr_len]
+        swapStr += aux
+        negMyStr_len -= 1
+    #print(swapStr)
+    #print(negMyStr_len)
+    return swapStr
+
+    
+strInit = "Hello"
+swStr = swap_string(strInit)
+swStr2 = reverse(strInit)
+print("Cadena original: %s" %strInit)
+print("Cadena al revés: %s" %swStr)
+print("Cadena al revés: %s" %swStr2)
