@@ -1,5 +1,7 @@
 ### Higher Order Functions ###
 
+from functools import reduce
+
 def sum_one(value):
     return value + 1
 
@@ -74,11 +76,41 @@ print(f_(DIVIDIR)(2,2))
 
 ### Built-in Higher Order Functions ###
 
-numbers = [2, 5, 10, 21]
+numbers = [2, 5, 10, 21, 3, 30]
 
 # Map
 
-def multiply_two(number):
-    return number * 2
+def multiply_two(value):
+    return value * 2
 
-map(numbers)
+# Map crea un objeto iterable recorriendo otro objeto iterable como segundo parametro
+# y una función que se le pase como primer argumento
+# Sin embargo, no se puede imprimir directamente, se tiene que pasar a un objeto como lista
+# o cadena
+print(list(map(multiply_two, numbers)))
+print(list(map(lambda value: value * 2, numbers)))
+
+# Filter
+
+def filter_greater_that_ten(value):
+    res = False
+    if 10 < value:
+        res = True
+    else:
+        res = False
+    return res
+
+print(list(filter(filter_greater_that_ten, numbers)))
+print(list(filter(lambda value: value > 10, numbers)))
+
+# Reduce
+
+# Regresa un solo valor dado que itera por todo el argumento iterable ejecutando la funcion
+# para cada uno de los valores 
+
+def sum_two_values(first_value, second_value):
+    print(first_value)
+    print(second_value)
+    return first_value + second_value
+
+print(reduce(sum_two_values, numbers))
