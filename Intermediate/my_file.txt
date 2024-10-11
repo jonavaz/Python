@@ -2,3 +2,4 @@ Mi nombre es Jonathan
 Mi apellido es Vazquez
 34 años
 Y mi lenguaje preferido es Python
+Aunque tambien me gusta C
