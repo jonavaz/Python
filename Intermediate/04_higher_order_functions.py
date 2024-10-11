@@ -71,3 +71,14 @@ print(f_(SUMAR)(2,2))
 print(f_(RESTAR)(2,2))
 print(f_(MULTIPLICAR)(2,2))
 print(f_(DIVIDIR)(2,2))
+
+### Built-in Higher Order Functions ###
+
+numbers = [2, 5, 10, 21]
+
+# Map
+
+def multiply_two(number):
+    return number * 2
+
+map(numbers)
